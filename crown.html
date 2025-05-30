@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>$50K Milestone - The Crown</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            background: #0a3d2e;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        .milestone-container {
+            width: 1012px;
+            height: 496px;
+            position: relative;
+            background: radial-gradient(ellipse at center, #065f46 0%, #047857 30%, #059669 60%, #10b981 100%);
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 25px 80px rgba(16, 185, 129, 0.4);
+        }
+        
+        .crown {
+            position: absolute;
+            left: 50%;
+            top: 35%;
+            transform: translate(-50%, -50%);
+            width: 120px;
+            height: 80px;
+            z-index: 15;
+            animation: crownFloat 3s ease-in-out infinite;
+        }
+        
+        @keyframes crownFloat {
+            0%, 100% { transform: translate(-50%, -50%) rotate(-1deg); }
+            50% { transform: translate(-50%, -50%) rotate(1deg) translateY(-8px); }
+        }
+        
+        .crown-base {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 25px;
+            background: linear-gradient(45deg, #d97706, #f59e0b, #fbbf24, #f59e0b, #d97706);
+            border-radius: 12px;
+            box-shadow: 0 0 30px rgba(251, 191, 36, 0.8);
+        }
+        
+        .crown-peak {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 20px solid transparent;
+            border-right: 20px solid transparent;
+            border-bottom: 40px solid #fbbf24;
+            filter: drop-shadow(0 0 20px rgba(251, 191, 36, 0.9));
+        }
+        
+        .crown-side {
+            position: absolute;
+            bottom: 20px;
+            width: 0;
+            height: 0;
+            border-bottom: 25px solid #f59e0b;
+            filter: drop-shadow(0 0 15px rgba(245, 158, 11, 0.7));
+        }
+        
+        .crown-side.left {
+            left: 20px;
+            border-left: 15px solid transparent;
+            border-right: 15px solid transparent;
+        }
+        
+        .crown-side.right {
+            right: 20px;
+            border-left: 15px solid transparent;
+            border-right: 15px solid transparent;
+        }
+        
+        .crown-jewel {
+            position: absolute;
+            top: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 12px;
+            height: 12px;
+            background: radial-gradient(circle, #ffffff, #e0e7ff, #c7d2fe);
+            border-radius: 50%;
+            box-shadow: 0 0 25px rgba(255, 255, 255, 0.9);
+            animation: jewelSparkle 2s ease-in-out infinite;
+        }
+        
+        @keyframes jewelSparkle {
+            0%, 100% { box-shadow: 0 0 25px rgba(255, 255, 255, 0.9); }
+            50% { box-shadow: 0 0 40px rgba(255, 255, 255, 1); }
+        }
+        
+        .gem-50k {
+            position: absolute;
+            left: 50%;
+            top: 65%;
+            transform: translate(-50%, -50%);
+            width: 180px;
+            height: 100px;
+            background: linear-gradient(135deg, #10b981 0%, #059669 25%, #047857 50%, #065f46 75%, #064e3b 100%);
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 60px rgba(16, 185, 129, 0.8);
+            animation: gemGlow 2.5s ease-in-out infinite alternate;
+            z-index: 10;
+            border: 3px solid rgba(251, 191, 36, 0.3);
+        }
+        
+        @keyframes gemGlow {
+            0% { 
+                box-shadow: 0 0 60px rgba(16, 185, 129, 0.8);
+                transform: translate(-50%, -50%) scale(1);
+            }
+            100% { 
+                box-shadow: 0 0 100px rgba(16, 185, 129, 1);
+                transform: translate(-50%, -50%) scale(1.02);
+            }
+        }
+        
+        .gem-amount {
+            font-size: 42px;
+            font-weight: 900;
+            color: #ffffff;
+            text-shadow: 0 0 30px rgba(255, 255, 255, 0.8);
+            margin-bottom: 5px;
+            animation: amountShimmer 3s ease-in-out infinite;
+        }
+        
+        @keyframes amountShimmer {
+            0%, 100% { text-shadow: 0 0 30px rgba(255, 255, 255, 0.8); }
+            50% { text-shadow: 0 0 50px rgba(251, 191, 36, 0.9); }
+        }
+        
+        .gem-label {
+            font-size: 14px;
+            color: #d1fae5;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+        
+        .golden-aura {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(251, 191, 36, 0.15) 0%, rgba(245, 158, 11, 0.1) 40%, transparent 70%);
+            animation: auraExpand 4s ease-in-out infinite;
+            z-index: 5;
+        }
+        
+        @keyframes auraExpand {
+            0%, 100% { 
+                transform: translate(-50%, -50%) scale(1);
+                opacity: 0.6;
+            }
+            50% { 
+                transform: translate(-50%, -50%) scale(1.1);
+                opacity: 0.8;
+            }
+        }
+        
+        .cosmic-sparkle {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: radial-gradient(circle, #ffffff, #fbbf24);
+            border-radius: 50%;
+            animation: cosmicFloat 4s ease-in-out infinite;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+        }
+        
+        @keyframes cosmicFloat {
+            0%, 100% { 
+                opacity: 0.4;
+                transform: translateY(0px) rotate(0deg);
+            }
+            50% { 
+                opacity: 1;
+                transform: translateY(-25px) rotate(180deg);
+            }
+        }
+        
+        .celebration-particle {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            animation: particleDance 5s linear infinite;
+        }
+        
+        .particle-gold {
+            background: radial-gradient(circle, #fbbf24, #d97706);
+            box-shadow: 0 0 15px rgba(251, 191, 36, 0.8);
+        }
+        
+        .particle-white {
+            background: radial-gradient(circle, #ffffff, #e5e7eb);
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+        }
+        
+        .particle-emerald {
+            background: radial-gradient(circle, #10b981, #047857);
+            box-shadow: 0 0 15px rgba(16, 185, 129, 0.8);
+        }
+        
+        @keyframes particleDance {
+            0% {
+                opacity: 0;
+                transform: translateY(50px) rotate(0deg);
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-50px) rotate(360deg);
+            }
+        }
+        
+        .flowing-shape {
+            position: absolute;
+            border-radius: 50%;
+            animation: shapeFlow 6s ease-in-out infinite;
+        }
+        
+        .shape-golden {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(45deg, rgba(251, 191, 36, 0.3), rgba(245, 158, 11, 0.4));
+            left: 10%;
+            top: 20%;
+            animation-delay: 0s;
+        }
+        
+        .shape-emerald {
+            width: 35px;
+            height: 35px;
+            background: linear-gradient(45deg, rgba(16, 185, 129, 0.3), rgba(5, 150, 105, 0.4));
+            right: 10%;
+            top: 25%;
+            animation-delay: 1.5s;
+        }
+        
+        .shape-white {
+            width: 30px;
+            height: 30px;
+            background: linear-gradient(45deg, rgba(255, 255, 255, 0.3), rgba(229, 231, 235, 0.4));
+            left: 15%;
+            bottom: 25%;
+            animation-delay: 3s;
+        }
+        
+        .shape-accent {
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(45deg, rgba(245, 158, 11, 0.2), rgba(16, 185, 129, 0.3));
+            right: 15%;
+            bottom: 20%;
+            animation-delay: 4.5s;
+        }
+        
+        @keyframes shapeFlow {
+            0%, 100% { 
+                transform: translateY(0px) rotate(0deg) scale(1);
+                opacity: 0.6;
+            }
+            50% { 
+                transform: translateY(-20px) rotate(180deg) scale(1.1);
+                opacity: 0.9;
+            }
+        }
+        
+        .bottom-title {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            z-index: 15;
+        }
+        
+        .crown-title {
+            font-size: 32px;
+            font-weight: 800;
+            color: #ffffff;
+            text-shadow: 0 0 40px rgba(251, 191, 36, 0.8);
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            animation: crownTitleGlow 4s ease-in-out infinite;
+        }
+        
+        @keyframes crownTitleGlow {
+            0%, 100% { 
+                text-shadow: 0 0 40px rgba(251, 191, 36, 0.8);
+                transform: scale(1);
+            }
+            50% { 
+                text-shadow: 0 0 60px rgba(255, 255, 255, 0.9);
+                transform: scale(1.02);
+            }
+        }
+        
+        .prestige-line {
+            width: 100px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, rgba(251, 191, 36, 0.8), transparent);
+            margin: 10px auto 0;
+            animation: lineGlow 3s ease-in-out infinite;
+        }
+        
+        @keyframes lineGlow {
+            0%, 100% { opacity: 0.6; }
+            50% { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="milestone-container">
+        <!-- Golden aura effect -->
+        <div class="golden-aura"></div>
+        
+        <!-- Luxurious crown -->
+        <div class="crown">
+            <div class="crown-base"></div>
+            <div class="crown-peak"></div>
+            <div class="crown-side left"></div>
+            <div class="crown-side right"></div>
+            <div class="crown-jewel"></div>
+        </div>
+        
+        <!-- $50K gem -->
+        <div class="gem-50k">
+            <div class="gem-amount">$50,000</div>
+            <div class="gem-label">Milestone</div>
+        </div>
+        
+        <!-- Cosmic sparkles -->
+        <div class="cosmic-sparkle" style="left: 20%; top: 30%; animation-delay: 0s;"></div>
+        <div class="cosmic-sparkle" style="left: 80%; top: 35%; animation-delay: 1s;"></div>
+        <div class="cosmic-sparkle" style="left: 25%; top: 70%; animation-delay: 2s;"></div>
+        <div class="cosmic-sparkle" style="left: 75%; top: 65%; animation-delay: 3s;"></div>
+        <div class="cosmic-sparkle" style="left: 15%; top: 50%; animation-delay: 1.5s;"></div>
+        <div class="cosmic-sparkle" style="left: 85%; top: 55%; animation-delay: 2.5s;"></div>
+        
+        <!-- Celebration particles -->
+        <div class="celebration-particle particle-gold" style="left: 30%; animation-delay: 0s;"></div>
+        <div class="celebration-particle particle-white" style="left: 40%; animation-delay: 0.8s;"></div>
+        <div class="celebration-particle particle-emerald" style="left: 50%; animation-delay: 1.6s;"></div>
+        <div class="celebration-particle particle-gold" style="left: 60%; animation-delay: 2.4s;"></div>
+        <div class="celebration-particle particle-white" style="left: 70%; animation-delay: 3.2s;"></div>
+        <div class="celebration-particle particle-emerald" style="left: 20%; animation-delay: 4s;"></div>
+        <div class="celebration-particle particle-gold" style="left: 80%; animation-delay: 4.8s;"></div>
+        
+        <!-- Soft flowing shapes -->
+        <div class="flowing-shape shape-golden"></div>
+        <div class="flowing-shape shape-emerald"></div>
+        <div class="flowing-shape shape-white"></div>
+        <div class="flowing-shape shape-accent"></div>
+        
+        <!-- Bottom title -->
+        <div class="bottom-title">
+            <div class="crown-title">The Crown</div>
+            <div class="prestige-line"></div>
+        </div>
+    </div>
+</body>
+</html>
