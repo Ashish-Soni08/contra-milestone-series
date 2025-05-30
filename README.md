@@ -84,7 +84,7 @@ Emerald green, champagne gold, white light palette
 
 ### Live Demo
 
-Visit the live demo at: [https://github.com/Ashish-Soni08/contra-milestone-series](https://github.com/Ashish-Soni08/contra-milestone-series)
+Visit the live demo at: [https://github.com/Ashish-Soni08/contra-milestone-series](https://ashish-soni08.github.io/contra-milestone-series/)
 
 ## 👨‍💻 Creator
 
