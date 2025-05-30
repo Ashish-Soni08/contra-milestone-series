@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joy in Motion - Contra Milestone Series</title>
+    <meta name="description" content="Vibrant, animated milestone celebration cards for creative freelancers earning $1K, $5K, and $50K.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #0f0f23 0%, #1a1a3e 50%, #2d1b69 100%);
+            color: white;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 60px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .main-title {
+            font-size: 56px;
+            font-weight: 900;
+            background: linear-gradient(45deg, #FFD700, #00FFFF, #FF00FF, #00FF00);
+            background-size: 400% 400%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientShift 4s ease-in-out infinite;
+            margin-bottom: 20px;
+            text-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+        }
+        
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        
+        .subtitle {
+            font-size: 24px;
+            color: #E0E7FF;
+            margin-bottom: 16px;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+        
+        .description {
+            font-size: 18px;
+            color: #C7D2FE;
+            line-height: 1.6;
+            max-width: 700px;
+            margin: 0 auto 20px;
+        }
+        
+        .journey-text {
+            font-size: 16px;
+            color: #A78BFA;
+            font-style: italic;
+            margin-top: 10px;
+        }
+        
+        .milestones-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 80px;
+        }
+        
+        .milestone-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 25px;
+        }
+        
+        .milestone-header {
+            text-align: center;
+            max-width: 600px;
+        }
+        
+        .milestone-title {
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-shadow: 0 0 20px currentColor;
+        }
+        
+        .spark-title { 
+            color: #FFB6C1;
+            animation: sparkGlow 3s ease-in-out infinite;
+        }
+        .flow-title { 
+            color: #00FFFF;
+            animation: flowGlow 3s ease-in-out infinite;
+        }
+        .crown-title { 
+            color: #FFD700;
+            animation: crownGlow 3s ease-in-out infinite;
+        }
+        
+        @keyframes sparkGlow {
+            0%, 100% { text-shadow: 0 0 20px #FFB6C1; }
+            50% { text-shadow: 0 0 40px #FF69B4; }
+        }
+        
+        @keyframes flowGlow {
+            0%, 100% { text-shadow: 0 0 20px #00FFFF; }
+            50% { text-shadow: 0 0 40px #00BFFF; }
+        }
+        
+        @keyframes crownGlow {
+            0%, 100% { text-shadow: 0 0 20px #FFD700; }
+            50% { text-shadow: 0 0 40px #FFA500; }
+        }
+        
+        .milestone-subtitle {
+            font-size: 16px;
+            opacity: 0.9;
+            font-weight: 300;
+            margin-bottom: 8px;
+            color: #E5E7EB;
+        }
+        
+        .milestone-description {
+            font-size: 14px;
+            opacity: 0.7;
+            line-height: 1.5;
+            color: #D1D5DB;
+        }
+        
+        .milestone-frame {
+            width: 1012px;
+            height: 496px;
+            border: none;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 25px 80px rgba(0, 0, 0, 0.4);
+            transition: all 0.4s ease;
+            background: #000;
+        }
+        
+        .milestone-frame:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 35px 100px rgba(0, 0, 0, 0.6);
+        }
+        
+        .spark-frame:hover {
+            box-shadow: 0 35px 100px rgba(255, 182, 193, 0.3);
+        }
+        
+        .flow-frame:hover {
+            box-shadow: 0 35px 100px rgba(0, 255, 255, 0.3);
+        }
+        
+        .crown-frame:hover {
+            box-shadow: 0 35px 100px rgba(255, 215, 0, 0.3);
+        }
+        
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .nav-link {
+            display: inline-block;
+            padding: 8px 16px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            text-decoration: none;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .nav-link:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
+        }
+        
+        .spark-link:hover { background: rgba(255, 182, 193, 0.2); }
+        .flow-link:hover { background: rgba(0, 255, 255, 0.2); }
+        .crown-link:hover { background: rgba(255, 215, 0, 0.2); }
+        
+        .footer {
+            text-align: center;
+            margin-top: 100px;
+            padding: 60px 20px 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .footer-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #F3F4F6;
+            margin-bottom: 16px;
+            letter-spacing: 1px;
+        }
+        
+        .footer-text {
+            color: #9CA3AF;
+            font-size: 14px;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        
+        .credit {
+            color: #6B7280;
+            font-size: 12px;
+            font-weight: 500;
+        }
+        
+        .github-link {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .github-link:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 1100px) {
+            .milestone-frame {
+                width: 100%;
+                max-width: 1012px;
+                height: auto;
+                aspect-ratio: 1012/496;
+            }
+            
+            .main-title {
+                font-size: 42px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .main-title {
+                font-size: 32px;
+            }
+            
+            .subtitle {
+                font-size: 20px;
+            }
+            
+            .milestone-title {
+                font-size: 24px;
+            }
+            
+            .milestones-container {
+                gap: 60px;
+            }
+            
+            body {
+                padding: 20px 10px;
+            }
+            
+            .header {
+                margin-bottom: 40px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .main-title {
+                font-size: 28px;
+            }
+            
+            .milestone-title {
+                font-size: 20px;
+                letter-spacing: 2px;
+            }
+            
+            .nav-links {
+                gap: 10px;
+            }
+            
+            .nav-link {
+                padding: 6px 12px;
+                font-size: 11px;
+            }
+        }
+        
+        /* Loading animation */
+        .milestone-frame {
+            position: relative;
+        }
+        
+        .milestone-frame::before {
+            content: 'Loading...';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 18px;
+            z-index: 1;
+        }
+        
+        .milestone-frame iframe {
+            position: relative;
+            z-index: 2;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1 class="main-title">🎉 Joy in Motion</h1>
+        <p class="subtitle">Creative Milestone Series</p>
+        <p class="description">
+            Vibrant, animated milestone celebration cards for creative freelancers earning $1K, $5K, and $50K.
+        </p>
+        <p class="journey-text">
+            Experience the emotional journey from first spark to creative royalty
+        </p>
+    </div>
+    
+    <div class="milestones-container">
+        <!-- $1K Milestone -->
+        <div class="milestone-section">
+            <div class="milestone-header">
+                <h2 class="milestone-title spark-title">$1,000 - "The Spark"</h2>
+                <p class="milestone-subtitle">The magical first win moment</p>
+                <p class="milestone-description">
+                    Fresh, bright, and magical. Captures the joy of unlocking your first earnings with vibrant colors and playful motion.
+                </p>
+            </div>
+            <iframe 
+                src="spark.html" 
+                class="milestone-frame spark-frame"
+                loading="lazy"
+                title="$1K Milestone - The Spark">
+            </iframe>
+            <div class="nav-links">
+                <a href="spark.html" target="_blank" class="nav-link spark-link">View Full Screen</a>
+                <a href="spark.html" download class="nav-link spark-link">Download</a>
+            </div>
+        </div>
+        
+        <!-- $5K Milestone -->
+        <div class="milestone-section">
+            <div class="milestone-header">
+                <h2 class="milestone-title flow-title">$5,000 - "In Flow"</h2>
+                <p class="milestone-subtitle">Momentum and confidence in full swing</p>
+                <p class="milestone-description">
+                    Fast, glowing, and upward-focused. The freelancer in full flow with dynamic energy and neon highways of success.
+                </p>
+            </div>
+            <iframe 
+                src="flow.html" 
+                class="milestone-frame flow-frame"
+                loading="lazy"
+                title="$5K Milestone - In Flow">
+            </iframe>
+            <div class="nav-links">
+                <a href="flow.html" target="_blank" class="nav-link flow-link">View Full Screen</a>
+                <a href="flow.html" download class="nav-link flow-link">Download</a>
+            </div>
+        </div>
+        
+        <!-- $50K Milestone -->
+        <div class="milestone-section">
+            <div class="milestone-header">
+                <h2 class="milestone-title crown-title">$50,000 - "The Crown"</h2>
+                <p class="milestone-subtitle">Creative royalty achieved</p>
+                <p class="milestone-description">
+                    Prestige, arrival, excellence. Gold tones, shimmering particles, and elegant composition highlighting legendary success.
+                </p>
+            </div>
+            <iframe 
+                src="crown.html" 
+                class="milestone-frame crown-frame"
+                loading="lazy"
+                title="$50K Milestone - The Crown">
+            </iframe>
+            <div class="nav-links">
+                <a href="crown.html" target="_blank" class="nav-link crown-link">View Full Screen</a>
+                <a href="crown.html" download class="nav-link crown-link">Download</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer">
+        <h3 class="footer-title">Built for the Creative Community</h3>
+        <p class="footer-text">
+            Each milestone visual is crafted to evoke joy, excitement, and pride — reflecting how it feels to hit those milestones as a creative. 
+            Optimized at 1012×496px for web, community feeds, and social sharing.
+        </p>
+        <p class="credit">
+            Made with ❤️ using Claude<br>
+            By Ashish Soni
+        </p>
+        <a href="https://github.com/Ashish-Soni08/contra-milestone-series" class="github-link" target="_blank">
+            View on GitHub
+        </a>
+    </div>
+</body>
+</html>
