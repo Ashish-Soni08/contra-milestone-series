@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>$5K Milestone - In Flow</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            background: #111;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        .milestone-container {
+            width: 1012px;
+            height: 496px;
+            position: relative;
+            background: linear-gradient(135deg, #0f0f23 0%, #1a1a3e 25%, #2d1b69 50%, #4c1d95 75%, #1e1b4b 100%);
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(79, 70, 229, 0.3);
+        }
+        
+        .highway {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        
+        .ribbon {
+            position: absolute;
+            height: 8px;
+            background: linear-gradient(90deg, transparent, #00FFFF, #00FF00, #FF00FF, transparent);
+            border-radius: 4px;
+            animation: flowUpward 3s linear infinite;
+            box-shadow: 0 0 20px currentColor;
+        }
+        
+        .ribbon:nth-child(1) {
+            left: 15%;
+            width: 200px;
+            animation-delay: 0s;
+            background: linear-gradient(90deg, transparent, #00FFFF, #0080FF, transparent);
+        }
+        
+        .ribbon:nth-child(2) {
+            left: 25%;
+            width: 180px;
+            animation-delay: -0.5s;
+            background: linear-gradient(90deg, transparent, #00FF80, #00FF00, transparent);
+        }
+        
+        .ribbon:nth-child(3) {
+            left: 35%;
+            width: 220px;
+            animation-delay: -1s;
+            background: linear-gradient(90deg, transparent, #FF00FF, #8000FF, transparent);
+        }
+        
+        .ribbon:nth-child(4) {
+            right: 15%;
+            width: 190px;
+            animation-delay: -1.5s;
+            background: linear-gradient(90deg, transparent, #FF0080, #FF00FF, transparent);
+        }
+        
+        .ribbon:nth-child(5) {
+            right: 25%;
+            width: 210px;
+            animation-delay: -2s;
+            background: linear-gradient(90deg, transparent, #80FF00, #00FFFF, transparent);
+        }
+        
+        @keyframes flowUpward {
+            0% {
+                top: 120%;
+                opacity: 0;
+                transform: translateX(-50px) rotate(-2deg);
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                top: -20%;
+                opacity: 0;
+                transform: translateX(50px) rotate(2deg);
+            }
+        }
+        
+        .icon {
+            position: absolute;
+            font-size: 24px;
+            animation: iconFlow 4s linear infinite;
+            opacity: 0;
+        }
+        
+        .icon:nth-child(6) {
+            left: 20%;
+            color: #00FFFF;
+            animation-delay: 0s;
+        }
+        
+        .icon:nth-child(7) {
+            left: 40%;
+            color: #00FF00;
+            animation-delay: -1s;
+        }
+        
+        .icon:nth-child(8) {
+            right: 20%;
+            color: #FF00FF;
+            animation-delay: -2s;
+        }
+        
+        .icon:nth-child(9) {
+            right: 40%;
+            color: #FFFF00;
+            animation-delay: -3s;
+        }
+        
+        @keyframes iconFlow {
+            0% {
+                top: 110%;
+                opacity: 0;
+                transform: scale(0.5) rotate(0deg);
+            }
+            15% {
+                opacity: 1;
+                transform: scale(1) rotate(90deg);
+            }
+            85% {
+                opacity: 1;
+                transform: scale(1) rotate(270deg);
+            }
+            100% {
+                top: -10%;
+                opacity: 0;
+                transform: scale(0.5) rotate(360deg);
+            }
+        }
+        
+        .central-badge {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 160px;
+            height: 160px;
+            background: linear-gradient(45deg, #4c1d95, #7c3aed, #a855f7);
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 60px rgba(124, 58, 237, 0.8);
+            animation: badgeGlow 2s ease-in-out infinite alternate;
+            z-index: 10;
+            border: 4px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        @keyframes badgeGlow {
+            0% { 
+                box-shadow: 0 0 60px rgba(124, 58, 237, 0.8);
+                transform: translate(-50%, -50%) scale(1);
+            }
+            100% { 
+                box-shadow: 0 0 100px rgba(124, 58, 237, 1);
+                transform: translate(-50%, -50%) scale(1.05);
+            }
+        }
+        
+        .badge-amount {
+            font-size: 36px;
+            font-weight: 900;
+            color: #FFFFFF;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+            margin-bottom: 4px;
+        }
+        
+        .badge-label {
+            font-size: 12px;
+            color: #E0E7FF;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+        
+        .sparkle-effect {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background: #FFFFFF;
+            border-radius: 50%;
+            animation: sparkleGlow 2s ease-in-out infinite;
+            box-shadow: 0 0 10px currentColor;
+        }
+        
+        @keyframes sparkleGlow {
+            0%, 100% { 
+                opacity: 0.3; 
+                transform: scale(0.8);
+            }
+            50% { 
+                opacity: 1; 
+                transform: scale(1.2);
+            }
+        }
+        
+        .arrow {
+            position: absolute;
+            font-size: 32px;
+            color: #00FFFF;
+            animation: arrowPulse 1.5s ease-in-out infinite;
+            text-shadow: 0 0 20px currentColor;
+        }
+        
+        .arrow:nth-child(odd) {
+            color: #00FF00;
+        }
+        
+        @keyframes arrowPulse {
+            0%, 100% { 
+                opacity: 0.6; 
+                transform: translateY(0px);
+            }
+            50% { 
+                opacity: 1; 
+                transform: translateY(-10px);
+            }
+        }
+        
+        .bottom-text {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            z-index: 15;
+        }
+        
+        .milestone-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #FFFFFF;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            animation: titleGlow 3s ease-in-out infinite;
+        }
+        
+        @keyframes titleGlow {
+            0%, 100% { 
+                text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+            }
+            50% { 
+                text-shadow: 0 0 40px rgba(0, 255, 255, 0.8);
+            }
+        }
+        
+        .energy-particle {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background: #00FFFF;
+            border-radius: 50%;
+            animation: particleStream 2s linear infinite;
+            box-shadow: 0 0 8px currentColor;
+        }
+        
+        @keyframes particleStream {
+            0% {
+                opacity: 0;
+                transform: translateY(100px) scale(0);
+            }
+            20% {
+                opacity: 1;
+                transform: translateY(0px) scale(1);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-100px) scale(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="milestone-container">
+        <div class="highway">
+            <!-- Flowing ribbons -->
+            <div class="ribbon"></div>
+            <div class="ribbon"></div>
+            <div class="ribbon"></div>
+            <div class="ribbon"></div>
+            <div class="ribbon"></div>
+            
+            <!-- Flowing icons -->
+            <div class="icon">💡</div>
+            <div class="icon">🚀</div>
+            <div class="icon">⚡</div>
+            <div class="icon">🎯</div>
+        </div>
+        
+        <!-- Central $5K badge -->
+        <div class="central-badge">
+            <div class="badge-amount">$5K</div>
+            <div class="badge-label">Earned</div>
+        </div>
+        
+        <!-- Sparkle effects around badge -->
+        <div class="sparkle-effect" style="left: 40%; top: 30%; animation-delay: 0s;"></div>
+        <div class="sparkle-effect" style="left: 60%; top: 35%; animation-delay: 0.5s;"></div>
+        <div class="sparkle-effect" style="left: 35%; top: 65%; animation-delay: 1s;"></div>
+        <div class="sparkle-effect" style="left: 65%; top: 70%; animation-delay: 1.5s;"></div>
+        <div class="sparkle-effect" style="left: 45%; top: 25%; animation-delay: 0.3s;"></div>
+        <div class="sparkle-effect" style="left: 55%; top: 75%; animation-delay: 0.8s;"></div>
+        
+        <!-- Dynamic arrows -->
+        <div class="arrow" style="left: 30%; top: 40%; animation-delay: 0s;">↗</div>
+        <div class="arrow" style="right: 30%; top: 45%; animation-delay: 0.3s;">↖</div>
+        <div class="arrow" style="left: 25%; bottom: 40%; animation-delay: 0.6s;">↑</div>
+        <div class="arrow" style="right: 25%; bottom: 35%; animation-delay: 0.9s;">↑</div>
+        
+        <!-- Energy particles -->
+        <div class="energy-particle" style="left: 48%; animation-delay: 0s;"></div>
+        <div class="energy-particle" style="left: 52%; animation-delay: 0.2s;"></div>
+        <div class="energy-particle" style="left: 50%; animation-delay: 0.4s;"></div>
+        <div class="energy-particle" style="left: 46%; animation-delay: 0.6s;"></div>
+        <div class="energy-particle" style="left: 54%; animation-delay: 0.8s;"></div>
+        
+        <!-- Bottom title -->
+        <div class="bottom-text">
+            <div class="milestone-title">In Flow</div>
+        </div>
+    </div>
+</body>
+</html>
